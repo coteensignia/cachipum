@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra, Papel o Tijera</title>
+ 
+</head>
+
+<body>
+    <h1>Piedra, Papel o Tijera</h1>
+    
+
+    <script>
+
+let games = prompt("Indique la cantidad de juegos");
+
+// Volver a jugar si es necesario
+for (let i = 1; i <= games; i++) {
+
+    // Hacerlo jugar, indique piedra, papel o tijera
+    let opPlayer = prompt("Elija entre piedra, papel o tijera").toLowerCase();
+
+    // Hacer jugar a la máquina que elija piedra, papel o tijera
+    let opciones = ["piedra", "papel", "tijera"];
+    let numAleatorio = Math.floor(Math.random() * 3);
+    let opComputer = opciones[numAleatorio];
+
+    // Definir a un ganador (comparar)
+    if (opPlayer === opComputer) {
+        // Declarar un empate
+        alert(`EMPATE el computador eligió: ${opComputer} - tú elegiste: ${opPlayer}`);
+    } else if (
+        (opPlayer === "piedra" && opComputer === "tijera") ||
+        (opPlayer === "tijera" && opComputer === "papel") ||
+        (opPlayer === "papel" && opComputer === "piedra")
+    ) {
+        // Felicitar al ganador
+        alert(`Felicidades GANASTE el computador eligió: ${opComputer} - tú elegiste: ${opPlayer}`);
+    } else {
+        // Indicarle al usuario que ha perdido
+        alert(`PERDISTE el computador eligió: ${opComputer} - tú elegiste: ${opPlayer}`);
+    }
+}
+
+    </script>
+</body>
+</html>
+
+
